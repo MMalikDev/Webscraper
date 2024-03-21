@@ -1,0 +1,8 @@
+{
+  "name": "quotes",
+  "url": "https://quotes.toscrape.com/",
+  "page": "api/quotes?page=%i",
+  "page_limit": 100,
+  "key": "quotes",
+  "api": true
+}

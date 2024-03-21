@@ -1,0 +1,16 @@
+{
+  "model": "Books",
+  "url": "https://books.toscrape.com/",
+  "page": "catalogue/page-%i.html",
+  "page_limit": 100,
+  "parent_nodes": {
+    "css": "article.product_pod"
+  },
+  "child_nodes": {
+    "title": { "css": "h3 a ", "attribute": "title" },
+    "url": { "css": "h3 a", "attribute": "href" },
+    "img": { "css": "img.thumbnail", "attribute": "src" },
+    "price": { "css": "p.price_color", "attribute": "text" },
+    "availability": { "css": "p.availability", "attribute": "text" }
+  }
+}

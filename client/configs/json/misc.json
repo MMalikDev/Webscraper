@@ -1,0 +1,12 @@
+{
+  "model": "Miscellaneous",
+  "name": "Misc",
+  "domains": ["quotes.toscrape.com"],
+  "urls": ["https://quotes.toscrape.com/"],
+  "parent_nodes": "div.quote",
+  "child_nodes": {
+    "id": "small.author::text",
+    "value": "small.author::text"
+  },
+  "next_node": "li.next > a::attr(href)"
+}

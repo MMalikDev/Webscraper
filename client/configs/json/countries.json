@@ -1,0 +1,14 @@
+{
+  "model": "Country",
+  "name": "country",
+  "domains": ["www.scrapethissite.com"],
+  "urls": ["https://www.scrapethissite.com/pages/simple/"],
+  "parent_nodes": "div.country",
+  "child_nodes": {
+    "id": "h3.country-name::text",
+    "name": "h3.country-name::text",
+    "capital": "span.country-capital::text",
+    "population": "span.country-population::text",
+    "area": "span.country-area::text"
+  }
+}

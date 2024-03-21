@@ -1,0 +1,124 @@
+[
+  {
+    "model": "Article",
+    "url": "https://www.scrapethissite.com/pages/",
+    "parent_nodes": {
+      "css": "div.page"
+    },
+    "child_nodes": {
+      "title": { "css": "h3.page-title", "attribute": "text" },
+      "link": { "css": "h3.page-title a", "attribute": "href" },
+      "description": { "css": "p.session-desc", "attribute": "text" }
+    }
+  },
+  {
+    "model": "Books",
+    "url": "https://books.toscrape.com/",
+    "page": "catalogue/page-%i.html",
+    "page_limit": 100,
+    "parent_nodes": {
+      "css": "article.product_pod"
+    },
+    "child_nodes": {
+      "title": { "css": "h3 a ", "attribute": "title" },
+      "url": { "css": "h3 a", "attribute": "href" },
+      "img": { "css": "img.thumbnail", "attribute": "src" },
+      "price": { "css": "p.price_color", "attribute": "text" },
+      "availability": { "css": "p.availability", "attribute": "text" }
+    }
+  },
+  {
+    "model": "Country",
+    "url": "https://www.scrapethissite.com/pages/simple/",
+    "parent_nodes": {
+      "css": "div.country"
+    },
+    "child_nodes": {
+      "name": { "css": "h3.country-name", "attribute": "text" },
+      "capital": { "css": "span.country-capital", "attribute": "text" },
+      "population": { "css": "span.country-population", "attribute": "text" },
+      "area": { "css": "span.country-area", "attribute": "text" }
+    }
+  },
+  {
+    "model": "Jobs",
+    "url": "https://realpython.github.io/fake-jobs/",
+    "parent_nodes": {
+      "css": "div.card-content"
+    },
+    "child_nodes": {
+      "title": { "css": "h2.title", "attribute": "text" },
+      "company": { "css": "h3.company", "attribute": "text" },
+      "location": { "css": "p.location", "attribute": "text" },
+      "date_posted": { "css": "time", "attribute": "datetime" },
+      "link": { "css": "footer a:last-of-type", "attribute": "href" }
+    }
+  },
+  {
+    "model": "Links",
+    "url": "https://crawler-test.com/",
+    "parent_nodes": {
+      "css": "div.panel a"
+    },
+    "child_nodes": {
+      "name": { "css": "a", "attribute": "text" },
+      "url": { "css": "a", "attribute": "href" }
+    }
+  },
+  {
+    "model": "Miscellaneous",
+    "url": "https://quotes.toscrape.com/tableful/",
+    "parent_nodes": {
+      "css": "table tr:nth-child(even)"
+    },
+    "child_nodes": {
+      "value": { "css": "td", "attribute": "text" }
+    }
+  },
+  {
+    "model": "Miscellaneous",
+    "url": "https://www.scrapethissite.com/pages/advanced/?gotcha=headers",
+    "headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.3"
+    },
+    "parent_nodes": {
+      "css": "div.row"
+    },
+    "child_nodes": {
+      "msg": { "css": "div.row", "attribute": "text" }
+    }
+  },
+  {
+    "model": "Teams",
+    "url": "https://www.scrapethissite.com/pages/forms/",
+    "page": "?page_num=%i&per_page=100",
+    "page_limit": 100,
+    "parent_nodes": {
+      "css": "tr.team"
+    },
+    "child_nodes": {
+      "name": { "css": "td.name", "attribute": "text" },
+      "year": { "css": "td.year", "attribute": "text" },
+      "wins": { "css": "td.wins", "attribute": "text" },
+      "losses": { "css": "td.losses", "attribute": "text" },
+      "ot_losses": { "css": "td.ot-losses", "attribute": "text" },
+      "pct": { "css": "td.pct", "attribute": "text" },
+      "gf": { "css": "td.gf", "attribute": "text" },
+      "ga": { "css": "td.ga", "attribute": "text" },
+      "diff": { "css": "td.diff", "attribute": "text" }
+    }
+  },
+  {
+    "model": "Turtles",
+    "url": "https://www.scrapethissite.com/pages/frames/?frame=i",
+    "parent_nodes": {
+      "css": "div.turtle-family-card"
+    },
+    "child_nodes": {
+      "name": { "css": "h3.family-name", "attribute": "text" },
+      "img": { "css": "img.turtle-image", "attribute": "src" },
+      "link": { "css": "a.btn", "attribute": "href" }
+    }
+  }
+]

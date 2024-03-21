@@ -1,0 +1,12 @@
+{
+  "model": "Turtles",
+  "url": "https://www.scrapethissite.com/pages/frames/?frame=i",
+  "parent_nodes": {
+    "css": "div.turtle-family-card"
+  },
+  "child_nodes": {
+    "name": { "css": "h3.family-name", "attribute": "text" },
+    "img": { "css": "img.turtle-image", "attribute": "src" },
+    "link": { "css": "a.btn", "attribute": "href" }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "model": "Jobs",
+  "url": "https://realpython.github.io/fake-jobs/",
+  "parent_nodes": {
+    "css": "div.card-content"
+  },
+  "child_nodes": {
+    "title": { "css": "h2.title", "attribute": "text" },
+    "company": { "css": "h3.company", "attribute": "text" },
+    "location": { "css": "p.location", "attribute": "text" },
+    "date_posted": { "css": "time", "attribute": "datetime" },
+    "link": { "css": "footer a:last-of-type", "attribute": "href" }
+  }
+}

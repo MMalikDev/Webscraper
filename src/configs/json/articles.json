@@ -1,0 +1,12 @@
+{
+  "model": "Article",
+  "url": "https://www.scrapethissite.com/pages/",
+  "parent_nodes": {
+    "css": "div.page"
+  },
+  "child_nodes": {
+    "title": { "css": "h3.page-title", "attribute": "text" },
+    "link": { "css": "h3.page-title a", "attribute": "href" },
+    "description": { "css": "p.session-desc", "attribute": "text" }
+  }
+}

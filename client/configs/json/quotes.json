@@ -1,0 +1,14 @@
+{
+  "model": "Quotes",
+  "name": "quotes",
+  "domains": ["quotes.toscrape.com"],
+  "urls": ["https://quotes.toscrape.com/"],
+  "parent_nodes": "div.quote",
+  "child_nodes": {
+    "id": "span.text::text",
+    "quote": "span.text::text",
+    "author": "small.author::text",
+    "tags": "div.tags > a.tag::text"
+  },
+  "next_node": "li.next > a::attr(href)"
+}

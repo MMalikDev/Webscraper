@@ -1,0 +1,13 @@
+{
+  "js_required": true,
+  "model": "Miscellaneous",
+  "url": "https://quotes.toscrape.com/js/",
+  "parent_nodes": {
+    "css": "div.quote",
+    "child_nodes": {
+      "quote": { "css": "span.text", "attribute": "text" },
+      "author": { "css": "span small.author", "attribute": "text" },
+      "tags": { "css": "div.tags", "attribute": "text" }
+    }
+  }
+}

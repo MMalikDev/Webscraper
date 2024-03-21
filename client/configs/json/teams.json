@@ -1,0 +1,20 @@
+{
+  "model": "Teams",
+  "name": "teams",
+  "domains": ["www.scrapethissite.com"],
+  "urls": ["https://www.scrapethissite.com/pages/forms/"],
+  "parent_nodes": "tr.team",
+  "child_nodes": {
+    "id": "td.name::text",
+    "name": "td.name::text",
+    "year": "td.year::text",
+    "wins": "td.wins::text",
+    "losses": "td.losses::text",
+    "ot_losses": "td.ot-losses::text",
+    "pct": "td.pct::text",
+    "gf": "td.gf::text",
+    "ga": "td.ga::text",
+    "diff": "td.diff::text"
+  },
+  "next_node": "ul.pagination > li[aria-label=Next] > a::attr(href)"
+}

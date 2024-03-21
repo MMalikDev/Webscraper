@@ -1,0 +1,10 @@
+{
+  "model": "Miscellaneous",
+  "url": "https://quotes.toscrape.com/tableful/",
+  "parent_nodes": {
+    "css": "table tr:nth-child(even)"
+  },
+  "child_nodes": {
+    "value": { "css": "td", "attribute": "text" }
+  }
+}

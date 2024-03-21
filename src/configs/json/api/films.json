@@ -1,0 +1,8 @@
+{
+  "name": "films",
+  "url": "https://www.scrapethissite.com/",
+  "page": "pages/ajax-javascript/?ajax=true&year=%i",
+  "page_limit": 2015,
+  "page_min": 2010,
+  "api": true
+}

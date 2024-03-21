@@ -1,0 +1,11 @@
+{
+  "model": "Links",
+  "url": "https://crawler-test.com/",
+  "parent_nodes": {
+    "css": "div.panel a"
+  },
+  "child_nodes": {
+    "name": { "css": "a", "attribute": "text" },
+    "url": { "css": "a", "attribute": "href" }
+  }
+}

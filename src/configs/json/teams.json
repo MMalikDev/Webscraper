@@ -1,0 +1,20 @@
+{
+  "model": "Teams",
+  "url": "https://www.scrapethissite.com/pages/forms/",
+  "page": "?page_num=%i&per_page=100",
+  "page_limit": 100,
+  "parent_nodes": {
+    "css": "tr.team"
+  },
+  "child_nodes": {
+    "name": { "css": "td.name", "attribute": "text" },
+    "year": { "css": "td.year", "attribute": "text" },
+    "wins": { "css": "td.wins", "attribute": "text" },
+    "losses": { "css": "td.losses", "attribute": "text" },
+    "ot_losses": { "css": "td.ot-losses", "attribute": "text" },
+    "pct": { "css": "td.pct", "attribute": "text" },
+    "gf": { "css": "td.gf", "attribute": "text" },
+    "ga": { "css": "td.ga", "attribute": "text" },
+    "diff": { "css": "td.diff", "attribute": "text" }
+  }
+}
