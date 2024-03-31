@@ -4,6 +4,7 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 import json
+from pathlib import Path
 
 from itemadapter import ItemAdapter
 from scrapy import Item, Spider
@@ -13,7 +14,8 @@ class JsonPipeline:
     def open_spider(self, spider: Spider):
         self.data = []
 
-        file = "data/%s.json" % spider.name
+        file = Path("data/%s.json" % spider.name)
+        file.parent.mkdir(parents=True, exist_ok=True)
         self.file = open(file, "w")
 
     def close_spider(self, spider: Spider):
