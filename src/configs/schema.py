@@ -18,8 +18,8 @@ class Schema:
         self.model: str = configs.get("model")
 
         model_types = models.OPTIONS.get(self.model)
-        self.db = model_types.db
-        self.item = model_types.item
+        self.db = model_types.db if model_types else None
+        self.item = model_types.item if model_types else None
 
         self.key: str = configs.get("key")
         self.name: str = configs.get("name")

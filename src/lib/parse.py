@@ -12,7 +12,7 @@ def get_attribute(node: Node, selector: str, attribute: str) -> Optional[str]:
         case "text":
             return node.css_first(selector).text(strip=True)
         case _:
-            return node.css_first(selector).attributes[attribute]
+            return node.css_first(selector).attributes.get(attribute, "")
 
 
 def get_children(children: List[Node], hashmap: Dict[str, Configs]) -> Nodes:
@@ -25,7 +25,13 @@ def get_children(children: List[Node], hashmap: Dict[str, Configs]) -> Nodes:
     return nodes
 
 
-def parse(html: HTMLParser, parent: Dict[str, str], children: Dict[str, str]) -> Nodes:
-    articles = html.css(parent["css"])
-    children = {k: Configs(v["css"], v["attribute"]) for k, v in children.items()}
+def parse(
+    html: HTMLParser, parent: Dict[str, str], children: Dict[str, Dict[str, str]]
+) -> Nodes:
+    articles = html.css(parent.get("css", "*"))
+    children = {
+        k: Configs(v.get("css", "*"), v.get("attribute", "text"))
+        for k, v in children.items()
+    }
+
     return get_children(articles, children)
