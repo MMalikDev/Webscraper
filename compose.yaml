@@ -11,6 +11,26 @@ volumes:
   dashboard_data:
   dashboard_config:
 
+configs:
+  pgpass:
+    content: postgres:5432:${DB_NAME}:${DB_USERNAME}:${DB_PASSWORD}
+  servers.json:
+    content: |
+      {
+        "Servers": {
+          "1": {
+            "Group": "Servers",
+            "Name": "Postgres",
+            "Host": "postgres",
+            "Port": 5432,
+            "MaintenanceDB": "${DB_NAME}",
+            "Username": "${DB_USERNAME}",
+            "PassFile": "/pgpass",
+            "SSLMode": "prefer"
+          }
+        }
+      }
+
 services:
   python:
     build: $PYTHON_IMAGE
@@ -36,8 +56,9 @@ services:
     restart: always
 
     environment:
-      POSTGRES_USER: $DB_ROOT_USERNAME
-      POSTGRES_PASSWORD: $DB_ROOT_PASSWORD
+      POSTGRES_DB: $DB_NAME
+      POSTGRES_USER: $DB_USERNAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
 
     volumes:
       - database_data:/var/lib/postgresql/data
@@ -56,7 +77,12 @@ services:
 
     volumes:
       - dashboard_data:/var/lib/pgadmin
-      - dashboard_config:/pgadmin4/servers.json
+
+    configs:
+      - source: servers.json
+        target: /pgadmin4/servers.json
+      - source: pgpass
+        target: /pgpass
 
     networks:
       proxy:
@@ -64,4 +90,4 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.services.dashboard.loadbalancer.server.port=80"
-      - "traefik.http.routers.dashboard.rule=Host(`dashboard.${DOMAIN}`)"
+      - "traefik.http.routers.dashboard.rule=Host(`dashboard.${DOMAIN:-localhost}`)"
