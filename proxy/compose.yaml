@@ -6,7 +6,7 @@ networks:
 
 services:
   traefik:
-    image: traefik:v3.0
+    image: traefik:v3.7.0
     container_name: proxy
     networks:
       proxy:
@@ -16,7 +16,7 @@ services:
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./config/provider.yaml:/etc/provider/config.yaml:ro
+      - ./config/traefik/provider.yaml:/etc/provider/config.yaml:ro
       - ./config/traefik/traefik.yaml:/etc/traefik/traefik.yaml:ro
       - ./config/traefik/certs/:/etc/traefik/certs/
       - ./config/traefik/logs/:/var/log/traefik/
